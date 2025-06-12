@@ -1,0 +1,46 @@
+{
+  "id": "9253f4c0-36ec-4e01-9c5c-a7bfc1c48c6f",
+  "template": "app-nolayers",
+  "versions": {
+    "AbpFramework": "9.2.0",
+    "AbpStudio": "1.0.0",
+    "TargetDotnetFramework": "net9.0"
+  },
+  "modules": {
+    "AbpUserBasedSetting": {
+      "path": "AbpUserBasedSetting.abpmdl"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/run-profiles/Default.abprun.json"
+    }
+  },
+  "options": {
+    "httpRequests": {
+      "ignoredUrls": [
+      
+      ]
+    }
+  },
+  "creatingStudioConfiguration": {
+    "template": "app-nolayers",
+    "createdAbpStudioVersion": "1.0.0",
+    "multiTenancy": "true",
+    "runInstallLibs": "true",
+    "useLocalReferences": "false",
+    "uiFramework": "mvc",
+    "databaseProvider": "ef",
+    "runDbMigrator": "true",
+    "databaseManagementSystem": "sqlite",
+    "createInitialMigration": "true",
+    "theme": "leptonx-lite",
+    "themeStyle": "",
+    "themeMenuPlacement": "",
+    "publicWebsite": "",
+    "socialLogin": "false",
+    "selectedLanguages": ["English", "Türkçe", ],
+    "defaultLanguage": "English",
+    "createCommand": "abp new AbpUserBasedSetting -t app-nolayers --ui-framework mvc --mobile  --database-provider ef --database-management-system sqlite --theme leptonx-lite --no-tests --without-cms-kit --dont-run-bundling --no-social-logins -no-gdpr -no-openiddict-admin-ui -no-audit-logging -no-file-management -no-language-management -no-text-template-management"
+  }
+}
