@@ -12,10 +12,9 @@ Uygulama **Single Layer (Tek Katman)** mimarisi ve **Razor Pages** kullanılarak
 - Razor Pages ile sade kullanıcı arayüzü
 - `SettingDefinitionProvider` ile özel ayar tanımı yapılır
 
----
-
 ## 📁 Proje Yapısı
 
+```
 UserBasedSetting.Web/
 ├── Pages/
 │ ├── Index.cshtml / Index.cshtml.cs
@@ -25,8 +24,7 @@ UserBasedSetting.Web/
 │ └── UserThemeSettingDefinitionProvider.cs
 └── UserBasedSettingWebModule.cs
 
-
----
+```
 
 ## 🧠 Nasıl Çalışır?
 
