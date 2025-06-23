@@ -1,11 +1,16 @@
-# User Based Setting
+# ABP Razor Pages ile Kullanıcı Bazlı Tema Tercihi Uygulaması
 
-🎯 Amaç
-Bu örnekte, Single Layer Razor Pages yapısında geliştirilmiş bir ABP projesinde **kullanıcıya özel ayarların** nasıl geliştirileceğini öğreneceğiz.
+🎯 **Amaç**
 
-Her kullanıcı kendi temasını seçebilecek
-Tercih veritabanında kullanıcıya özel olarak saklanacak
-Ana sayfa yüklendiğinde, kullanıcıya özel tema otomatik olarak uygulanacak
+Bu yazıda, **ABP Framework** kullanan bir **Single Layer Razor Pages** projesinde **kullanıcıya özel ayarların nasıl yönetileceğini** öğreneceğiz. Örnek senaryo olarak kullanıcıların açık veya koyu tema tercihini uygulama arayüzüne yansıttığımız bir yapı geliştireceğiz.
+
+🧩 Bu uygulamayla neler yapacağız?
+
+- Her kullanıcı kendi tema tercihini seçebilecek  
+- Seçilen tema **veritabanında kullanıcıya özel olarak saklanacak**  
+- Kullanıcı uygulamaya tekrar girdiğinde, **seçtiği tema otomatik olarak yüklenecek**
+
+Bu senaryo, kişisel ayarların kullanıcı bazlı nasıl yönetileceğini ve ABP Framework’ün `ISettingManager` servisiyle nasıl çalıştığını pratik bir şekilde gösterecek.
 
 ---
 
@@ -168,18 +173,28 @@ a.dark {
 }
 ```
 
-## Nasıl Çalışır?
-
-1. `AbpUserBasedSetting.User.PreferredTheme` adlı özel bir ayar tanımlanır
-2. `/Settings` sayfasında kullanıcı `light` (açık) veya `dark` (koyu) tema seçebilir
-3. Seçilen tema `ISettingManager.SetForUserAsync(...)` ile kaydedilir
-4. Ana sayfa `/Index` açıldığında kullanıcıya özel tema otomatik olarak yüklenir
+🔍 Nasıl Çalışır?
+AbpUserBasedSetting.User.PreferredTheme adlı özel bir ayar tanımlanır.
+/Settings sayfasında kullanıcı tema tercihini belirler.
+Tercih ISettingManager.SetForUserAsync ile kullanıcıya özel kaydedilir.
+/Index sayfası açıldığında tema tercihi uygulanır.
 
 ---
 
-## 🔧 Kurulum Adımları
+🚀 Kurulum Adımları
 
-### Repoyu Klonla
+1. Repoyu Klonla
 
 ```bash
 git clone https://github.com/icagatay/AbpUserBasedSetting.git
+cd AbpUserBasedSetting
+```
+
+2. Veritabanı Güncelle ve Projeyi Başlat
+```bash
+dotnet ef database update
+dotnet run
+```
+
+🎉 Sonuç
+Bu örnekle, ABP Framework’te ISettingManager kullanarak kullanıcı bazlı ayarların nasıl geliştirileceğini pratik bir şekilde uyguladık. Benzer şekilde dil tercihi, e-posta bildirim tercihi gibi birçok kişisel ayarı da aynı yöntemle yönetebilirsiniz.
